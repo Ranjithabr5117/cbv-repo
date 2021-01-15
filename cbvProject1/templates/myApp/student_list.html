@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+{% extends 'myApp/parent.html'%}
+  <body>
+    {% block for_child %}
+    <h1 style="color:green">List of Students </h1>
+    {%for x in student_list%}
+          <a href="/{{x.id}}"><h1 style="color:black">{{x.name}}'s Details</h1></a>
+          <a href="/update/{{x.id}}" class="btn btn-lg btn-primary">Update</a>
+          <a href="/delete/{{x.id}}" class="btn btn-lg btn-primary">Delete</a>
+          <br><br><br>
+    {%endfor%}
+      <a href="/create" class="btn btn-lg btn-primary">Insert Record</a>
+    {%endblock%}
+  </body>
+</html>
